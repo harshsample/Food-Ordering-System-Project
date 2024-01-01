@@ -1,2 +1,2 @@
-"# Food-Ordering-System" 
-"# Food-Ordering-System-Project" 
+Sem 1 MSCICT Project
+JAVA EE
