@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        
+        
+        <ui:composition template="main.xhtml">
+            <ui:define name="content">
+                
+                
+
+                <f:metadata>
+                    <f:event type="preRenderView" listener="#{userBean.checkEmail()}" />
+                </f:metadata>
+
+                
+<div class="container position-relative">
+    <div class="row">
+        <div class="col-md-8 pt-3">
+            <div class="shadow-sm rounded bg-white mb-3 overflow-hidden">
+                <div class="d-flex item-aligns-center">
+                    <p class="fw-bold h6 p-3 border-bottom mb-0 w-100">Your Cart</p>
+
+                </div>
+                
+                <div class="row m-0">
+                    
+                    <ui:repeat value="#{userBean.searchCartByEmail()}" var="c">
+                    <div class="col-md-12 px-0 border-top">
+                        <div class="">
+                            <div class="d-flex align-items-center gap-2 p-3 border-bottom menu-list" style="height: 200px">
+<!--                                <img alt="#" src="img/starter1.jpg" class="rounded-pill" style="height: 100px; width: 100px; margin-right: 20px"  />-->
+                                <h:graphicImage url="../FoodImage/#{c.mid.img}" class="rounded-pill" style="height: 100px; width: 100px; margin-right: 20px"   />
+                                <div>
+                                    <!--<h5 class="mb-1"> Mid : -#{m.mid} </h5>-->
+                                    <h5 class="mb-1">#{c.mid.name} </h5>
+                                    
+                                </div>
+                                
+                                    
+                               <!--<h:form>-->
+                               <p class="text-muted mb-0" style="margin-left: 30px"> Price :-  Rs /-  #{c.price}</p>
+                               <p class="text-muted mb-0" style="margin-left: 30px"> Quantity :-  #{c.qty}</p>
+                               <span class="ms-auto">
+                                   
+                                    <!--<a href="#" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#extras">-->
+                                    <h:commandLink action="#{userBean.deleteCartById(c.cid)}" class="btn btn-danger">Remove</h:commandLink>  
+                                   
+                                        <!--ADD TO CART-->
+                                     
+                                    <!--</a>-->
+                                </span>
+                               <!--</h:form>-->
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </ui:repeat>
+                   
+                </div>
+           
+            </div>
+            
+        </div>
+        <div class="col-md-4 pt-3">
+            <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar mb-3">
+                <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
+                    <img alt="osahan" src="img/starter1.jpg" class="me-3 rounded-circle img-fluid" />
+                    <div class="d-flex flex-column">
+                        <!--<h6 class="mb-1 fw-bold">#{userBean.restName}</h6>-->
+                        <!--<p class="mb-0 small text-muted"><i class="feather-map-pin"></i> #{userBean.restAddress}</p>-->
+                    </div>
+                </div>
+                
+                <div class="bg-white p-3 clearfix border-bottom">
+                    <p class="mb-1">Item Total <span class="float-end text-dark">#{userBean.fetchCartCount()}</span></p>
+                    <p class="mb-1">Restaurant Charges <span class="float-end text-dark">5%</span></p>
+                    <p class="mb-1">Delivery Fee<span class="text-info ms-1"><i class="feather-info"></i></span><span class="float-end text-dark">20 KM</span></p>
+                    <!--<p class="mb-1 text-success">Total Discount<span class="float-end text-success">$1884</span></p>-->
+                    <hr />
+                    <h6 class="fw-bold mb-0">TO PAY <span class="float-end">Rs/- #{userBean.GetTotalPrice()}</span></h6>
+                </div>
+                <div class="p-3">
+
+                    <h:commandLink class="btn btn-success w-100 btn-lg " action="#{userBean.placeOrder()}"> Place Order #{userBean.GetTotalPrice()} <i class="feather-arrow-right"></i> </h:commandLink>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            </ui:define>
+         </ui:composition>
+
+    </h:body>
+</html>

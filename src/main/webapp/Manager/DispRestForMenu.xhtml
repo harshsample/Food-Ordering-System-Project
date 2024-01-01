@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+     <h:head>
+        <title>All Restaurants</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        
+        <!--favicon-->
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
+        <!-- simplebar CSS-->
+        <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+        <!-- Bootstrap core CSS-->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+        <!--Data Tables -->
+        <link href="assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- animate CSS-->
+        <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+        <!-- Icons CSS-->
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+        <!-- Sidebar CSS-->
+        <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+        <!-- Custom Style-->
+        <link href="assets/css/app-style.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <!--<h:form>-->
+        <!--Hello from Facelets-->
+        
+
+
+                <ui:decorate template="main.xhtml">
+                    <ui:define name="content">
+                        <div class="content-wrapper">
+            <div class="container-fluid">
+
+
+                        <h:form>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header"><i class="fa fa-table"></i> Your Restaurants Data</div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th><h:outputText value="#"/></th>
+                                                        <th><h:outputText value="Email"/></th>
+                                                        <th><h:outputText value="Name"/></th>
+                                                        <th><h:outputText value="Image"/></th>
+                                                        <th><h:outputText value="Address"/></th>
+                                                        <th><h:outputText value="Description"/></th>
+                                                        <th><h:outputText value="Status"/></th>
+                                                        <th><h:outputText value="Action"/></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <ui:repeat value="#{managerBean.searchRestaurantByEmail()}" var="r">
+                                                        <tr>
+                                                            <td>#{r.rid}</td>
+                                                            <td>#{r.email.email}</td>
+                                                            <td>#{r.name}</td>
+                                                            <td>
+                                                                <h:graphicImage url="../RestaurantImage/#{r.img}" alt="RestaurantImage"  height="100px" width="100px" />
+
+                                                            </td>
+
+                                                            <td>#{r.address}</td>
+                                                            <td>#{r.description}</td>
+                                                            <td>#{r.status}</td>
+                                                            <td>
+                                                                <h:commandLink action="#{managerBean.searchRestaurantForAddFood(r.rid)}" class="btn btn-success">Add Food</h:commandLink>   |  
+                                                                 <h:commandLink action="#{managerBean.getMenuByRid(r.rid)}" class="btn btn-success">View Food</h:commandLink>  
+                                                            </td>
+                                                        </tr>
+                                                    </ui:repeat>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th><h:outputText value="Id"/></th>
+                                                        <th><h:outputText value="Email"/></th>
+                                                        <th><h:outputText value="Name"/></th>
+                                                        <th><h:outputText value="Image"/></th>
+                                                        <th><h:outputText value="Address"/></th>
+                                                        <th><h:outputText value="Description"/></th>
+                                                        <th><h:outputText value="Status"/></th>
+                                                        <th><h:outputText value="Action"/></th>
+                                                        
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </h:form>
+                 </div>
+        </div>
+                    </ui:define>
+
+                </ui:decorate>
+           
+
+        <!--</h:form>-->
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <!--<script src="assets/js/bootstrap.min.js"></script>-->
+
+        <!--simplebar js--> 
+        <!--<script src="assets/plugins/simplebar/js/simplebar.js"></script>-->
+        <!--sidebar-menu js--> 
+        <script src="assets/js/sidebar-menu.js"></script>
+
+        <!--Custom scripts--> 
+        <!--<script src="assets/js/app-script.js"></script>-->
+
+        <!--Data Tables js-->
+        <script src="assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/jszip.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/pdfmake.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/vfs_fonts.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/buttons.html5.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/buttons.print.min.js"></script>
+        <script src="assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                //Default data table
+                $('#default-datatable').DataTable();
+
+
+                var table = $('#example').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+                });
+
+                table.buttons().container()
+                        .appendTo('#example_wrapper .col-md-6:eq(0)');
+
+            });
+
+        </script>
+    </h:body>
+</html>

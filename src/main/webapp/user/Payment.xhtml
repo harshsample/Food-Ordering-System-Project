@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!--Hello from Facelets-->
+        <ui:composition template="main.xhtml">
+            <ui:define name="content">
+                <div class="d-none">
+                    <div class="bg-primary p-3 d-flex align-items-center">
+                        <a class="toggle togglew toggle-2" href="#"><span></span></a>
+                        <h4 class="fw-bold m-0 text-white">Thanks :)</h4>
+                    </div>
+                </div>
+                <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <div class="text-center pb-3">
+                            <h1 class="fw-bold">Done Your Payment</h1>
+<!--                            <p>Check your order status in <a href="my_order.html" class="fw-bold text-decoration-none text-primary">My Orders</a> about next steps information.</p>-->
+                        </div>
+                        <h:form>
+                            <div class="bg-white rounded text-center p-4 shadow-sm">
+                                <!--<h1 class="display-1 mb-4">🎉</h1>-->
+                                <h6 class="fw-bold mb-2">
+                                    <h:outputLabel for="gid" value="Select " styleClass="col-sm-2 col-form-label" />
+                                    <h:selectOneRadio id="gid" value="#{userBean.PType}" >
+                                        <f:selectItem itemValue="Offline" itemLabel="Go For Offline Payment"  /><br/>
+
+                                    </h:selectOneRadio>
+                                </h6>
+                                <!--<p class="small text-muted">Your order will be prepared and will come soon</p>-->
+                                <h:commandButton value="Payment" class="btn rounded btn-primary btn-lg w-100" action="#{userBean.ProcessPayment()}" />
+                                <!--<a href="status_onprocess.html" class="btn rounded btn-primary btn-lg w-100">Track My Order</a>-->
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+                
+                    <div class="form-group row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    
+               
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

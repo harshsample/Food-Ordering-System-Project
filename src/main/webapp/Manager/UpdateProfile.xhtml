@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!--Hello from Facelets-->
+        
+
+
+
+                <ui:decorate template="main.xhtml">
+                    <ui:define name="content">
+                        <div class="content-wrapper">
+            <div class="container-fluid">
+                        <div class="container position-relative">
+                    <div class="py-5 osahan-profile row">
+                        <div class="col-md-4 mb-3">
+                            <div class="bg-white rounded shadow-sm sticky_sidebar overflow-hidden">
+                                <a href="UpdateProfile.jsf" class="">
+                                    <div class="d-flex align-items-center p-3">
+                                        <div class="left me-3">
+                                            <!--<img alt="#" src="img/user1.jpg" class="rounded-circle" />-->
+                                        </div>
+                                        <div class="right">
+                                            <h6 class="mb-1 fw-bold">#{managerBean.userName} <i class="feather-check-circle text-success"></i></h6>
+                                            <p class="text-muted m-0 small"><span class="__cf_email__" data-cfemail="a0c9c1cdcfd3c1c8c1cee0c7cdc1c9cc8ec3cfcd">#{managerBean.email}</span></p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="osahan-credits d-flex align-items-center p-3 bg-light">
+                                    <p class="m-0">Accounts Credits</p>
+                                    <h5 class="m-0 ms-auto text-primary">$52.25</h5>
+                                </div>
+
+                                <div class="bg-white profile-details">
+                                    <a data-bs-toggle="modal" data-bs-target="#paycard" class="d-flex w-100 align-items-center border-bottom p-3">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold mb-1 text-dark">Payment Cards</h6>
+                                            <p class="small text-muted m-0">Add a credit or debit card</p>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="d-flex w-100 align-items-center border-bottom p-3">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold mb-1 text-dark">Address</h6>
+                                            <p class="small text-muted m-0">Add or remove a delivery address</p>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a class="d-flex align-items-center border-bottom p-3" data-bs-toggle="modal" data-bs-target="#inviteModal">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold mb-1">Refer Friends</h6>
+                                            <p class="small text-primary m-0">Get $10.00 FREE</p>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="faq.html" class="d-flex w-100 align-items-center border-bottom px-3 py-4">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold m-0 text-dark"><i class="feather-truck bg-danger text-white p-2 rounded-circle me-2"></i> Delivery Support</h6>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="contact-us.html" class="d-flex w-100 align-items-center border-bottom px-3 py-4">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold m-0 text-dark"><i class="feather-phone bg-primary text-white p-2 rounded-circle me-2"></i> Contact</h6>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="terms.html" class="d-flex w-100 align-items-center border-bottom px-3 py-4">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold m-0 text-dark"><i class="feather-info bg-success text-white p-2 rounded-circle me-2"></i> Term of use</h6>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                    <a href="privacy.html" class="d-flex w-100 align-items-center px-3 py-4">
+                                        <div class="left me-3">
+                                            <h6 class="fw-bold m-0 text-dark"><i class="feather-lock bg-warning text-white p-2 rounded-circle me-2"></i> Privacy policy</h6>
+                                        </div>
+                                        <div class="right ms-auto">
+                                            <span class="fw-bold m-0"><i class="feather-chevron-right h6 m-0"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <div class="rounded shadow-sm p-4 bg-white">
+                                <h5 class="mb-4">My account</h5>
+                                <div id="edit_profile">
+                                    <div>
+                                        <h:form>
+                                        <!--<form action="https://askbootstrap.com/preview/swiggiweb-v1-1/my_account.html">-->
+                                            <div class="form-group mb-3">
+                                                <label class="pb-1">First Name</label>
+                                                <!--<input type="text" class="form-control" value="Gurdeep" />-->
+                                                <h:inputText class="form-control" value="#{managerBean.userName}"  />
+                                            </div>
+<!--                                            <div class="form-group mb-3">
+                                                <label class="pb-1">Last Name</label>
+                                                <input type="text" class="form-control" value="Singh" />
+                                            </div>-->
+                                            <div class="form-group mb-3">
+                                                <label class="pb-1">Mobile Number</label>
+                                                <!--<input type="number" class="form-control" value="1234567890" />-->
+                                                <h:inputText class="form-control" value="#{managerBean.userPhone}"  />
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label class="pb-1">Email</label>
+                                                <!--<input type="email" class="form-control" value="iamosahan@gmail.com" />-->
+                                                <h:inputText class="form-control" value="#{managerBean.email}"  />
+                                            </div>
+                                            <!--<div class="form-group row">-->
+                                                <!--<h:outputLabel for="gid" value="Your Type" styleClass="col-sm-2 col-form-label" />-->
+<!--                                                    <div class="form-group mb-3">
+                                                        <label class="pb-1">Your Type</label>
+                                                        <h:selectOneRadio id="gid" value="#{managerBean.gid}" >
+                                                            
+                                                            <f:selectItem itemValue="2" itemLabel="Manager"  />
+                                                        </h:selectOneRadio>
+                                                    </div>-->
+                                            <!--</div>-->
+                                            <div class="text-center">
+                                                <!--<button type="submit" class="btn btn-primary w-100">Save Changes</button>-->
+                                                <h:commandButton value="Save Changes" action="#{managerBean.updateUser()}" class="btn btn-primary w-100"/>
+                                            </div>
+                                            </h:form>
+                                        <!--</form>-->
+                                    </div>
+                                    <div class="additional">
+                                        <div class="change_password my-3">
+                                            <a href="ChangePassword.jsf" class="p-3 border rounded bg-white btn d-flex align-items-center">Change Password
+                                                <i class="feather-arrow-right ms-auto"></i></a>
+                                        </div>
+                                        <div class="deactivate_account">
+                                            <a href="ForgotPassword.jsf" class="p-3 border rounded bg-white btn d-flex align-items-center">Deactivate Account
+                                                <i class="feather-arrow-right ms-auto"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+                    </ui:define>
+                </ui:decorate>
+            
+    </h:body>
+</html>

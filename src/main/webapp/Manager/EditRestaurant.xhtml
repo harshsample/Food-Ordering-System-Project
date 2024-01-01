@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!--Hello from Facelets-->
+         <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+                <ui:decorate template="main.xhtml">
+                    <ui:define name="content">
+                        <div class="content-wrapper">
+            <div class="container-fluid">
+<!--                        <h:form enctype="multipart/form-data">-->
+                            
+                            <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+                <h:form id="personal-info" enctype="multipart/form-data">
+                <h4 class="form-header text-uppercase">
+<!--                  <i class="fa fa-user-circle-o"></i>-->
+                   Update Your Restaurant Here..
+                </h4>
+                <div class="form-group row">
+                  <label for="input-1" class="col-sm-2 col-form-label">Restaurant Id</label>
+                  <div class="col-sm-10">
+                      <h:outputText class="form-control"  value="#{managerBean.rid}"  />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-1" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                      <h:outputText class="form-control"  value="#{sessionScope.Manager}"  />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-2" class="col-sm-2 col-form-label">Restaurant Name</label>
+                  <div class="col-sm-10">
+                      <h:inputText class="form-control" id="restaurantName"  value="#{managerBean.upRestName}"  />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-3" class="col-sm-2 col-form-label">Address</label>
+                  <div class="col-sm-10">
+                      <h:inputTextarea class="form-control" id="address"  value="#{managerBean.upRestAddress}"  />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-4" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-10">
+                      <h:inputTextarea class="form-control" id="description"  value="#{managerBean.upRestDesc}"  />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="input-8" class="col-sm-2 col-form-label">Select File</label>
+                  <div class="col-sm-10">
+                      <h:inputFile  class="form-control" id="file" value="#{managerBean.file}"  />
+                  </div>
+                </div>
+                    
+                    <div class="form-group row">
+                  <label for="input-1" class="col-sm-2 col-form-label">Restaurant Status</label>
+                  <div class="col-sm-10">
+                      <h:outputText class="form-control"  value="#{managerBean.upRestStatus}"  />
+                  </div>
+                </div>
+                
+                <div class="form-footer">
+<!--                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i> CANCEL</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> SAVE</button>-->
+                    <h:commandButton class="btn btn-success" action="#{managerBean.updateRestaurant()}" value="Update Restaurant" />
+
+                </div>
+              </h:form>
+            </div>
+          </div>
+        </div>
+      </div>
+                            <!--<h:commandLink action="ViewUsers.jsf?faces-redirect=true" value="View Users"/>-->
+                        <!--</h:form>-->
+                        </div>
+        </div>
+                    </ui:define>
+                </ui:decorate>
+            
+    </h:body>
+    </h:body>
+</html>

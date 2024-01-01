@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no " />
+        <meta name="description" content="Askbootstrap" />
+        <meta name="author" content="Askbootstrap" />
+        <link rel="icon" type="image/png" href="img/fav.png" />
+        <title>Swiggiweb - Online Food Ordering Website Template</title>
+
+        <link href="vendor/slick/slick/slick.css" rel="stylesheet" type="text/css" />
+        <link href="vendor/slick/slick/slick-theme.css" rel="stylesheet" type="text/css" />
+
+        <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css" />
+
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+        <link href="css/style.css" rel="stylesheet" />
+
+        <link href="vendor/sidebar/demo.css" rel="stylesheet" />
+
+        <title>Facelets Template</title>
+        <title>All Restaurant</title>
+    </h:head>
+    <h:body class="fixed-bottom-bar">
+        
+        <ui:composition template="main.xhtml">
+            <ui:define name="content">
+                <div class="osahan-popular">
+            <div class="d-none">
+                <div class="bg-primary border-bottom p-3 d-flex align-items-center">
+                    <a class="toggle togglew toggle-2" href="#"><span></span></a>
+                    <h4 class="fw-bold m-0 text-white">List</h4>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="most_popular py-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <h3 class="fw-bold text-dark mb-0">Most Popular</h3>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#filters" class="ms-auto btn btn-primary">Filters</a>
+                    </div>
+                    <div class="row">
+                        <ui:repeat value="#{userBean.getApproveRestaurant()}" var="r">
+                        <div class="col-12 col-md-4 mb-3">
+                            <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+                                <div class="list-card-image">
+                                    
+                                        <div class="osahan-slider-item">
+                                            <a href="restaurant.html">
+                                                <!--<img alt="#" src="img/popular1.png" class="img-fluid item-img w-100 rounded" />-->
+                                             <h:graphicImage url="../RestaurantImage/#{r.img}" class="img-fluid item-img w-100" style="height: 300px" alt="RestaurantImage"  height="100px" width="100px" />
+                                            </a>
+                                        </div>
+                                        
+                                    
+                                </div>
+                                <div class="p-3 position-relative">
+                                    <div class="list-card-body">
+                                        <h6 class="mb-1"><a href="restaurant.html" class="text-black">#{r.name}
+                                            </a>
+                                        </h6>
+                                        <p class="text-gray mb-3"> • #{r.address}</p>
+                                        <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm py-1 px-2"> • #{r.description} </span> <span class="float-end text-black-50"> <i class="feather-clock"></i> 15–25 min</span></p>
+                                    </div>
+                                    <div class="list-card-badge">
+                                        <span class="badge text-bg-danger">OFFER</span> <small>65% OSAHAN50</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </ui:repeat>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+                <div class="row">
+                    <div class="col">
+                        <a href="home.html" class="text-dark small fw-bold text-decoration-none">
+                            <p class="h4 m-0"><i class="feather-home"></i></p>
+                            Home
+                        </a>
+                    </div>
+                    <div class="col selected">
+                        <a href="trending.html" class="text-danger small fw-bold text-decoration-none">
+                            <p class="h4 m-0"><i class="feather-map-pin text-danger"></i></p>
+                            Trending
+                        </a>
+                    </div>
+                    <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+                        <div class="bg-danger rounded-circle mt-n0 shadow">
+                            <a href="checkout.html" class="text-white small fw-bold text-decoration-none">
+                                <i class="feather-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <a href="favorites.html" class="text-dark small fw-bold text-decoration-none">
+                            <p class="h4 m-0"><i class="feather-heart"></i></p>
+                            Favorites
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="profile.html" class="text-dark small fw-bold text-decoration-none">
+                            <p class="h4 m-0"><i class="feather-user"></i></p>
+                            Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </ui:define>
+        </ui:composition>
+    
+        
+
+
+    </h:body>
+    <script type="38de35e7ae8bf40b30278b0c-text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="38de35e7ae8bf40b30278b0c-text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script type="38de35e7ae8bf40b30278b0c-text/javascript" src="vendor/slick/slick/slick.min.js"></script>
+
+    <script type="38de35e7ae8bf40b30278b0c-text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+
+    <script type="38de35e7ae8bf40b30278b0c-text/javascript" src="js/osahan.js"></script>
+    <script src="../user/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="38de35e7ae8bf40b30278b0c-|49" defer="true"></script><script defer="true" src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f37bd525acc1896","version":"2023.7.0","r":1,"b":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</html>

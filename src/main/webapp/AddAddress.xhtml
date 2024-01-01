@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!--Hello from Facelets-->
+        <h:form>
+
+            <div class="form-group row">
+                <h:outputLabel for="Email" value="Email" styleClass="col-sm-2 col-form-label" />
+                <h:inputText rendered="true" id="Email" value="#{jsfBeanRegister.email}" requiredMessage="Please enter Email" styleClass="form-control" />
+            </div>
+
+            <div class="form-group row">
+                <h:outputLabel for="Country" value="Country" styleClass="col-sm-2 col-form-label" />
+                <h:inputText id="Country" rendered="true"  value="#{jsfBeanRegister.country}" requiredMessage="Please enter Country" styleClass="form-control" />
+            </div>
+
+
+            <div class="form-group row">
+                <h:outputLabel for="State" value="State" styleClass="col-sm-2 col-form-label" />
+                <h:inputText id="State" rendered="true"  value="#{jsfBeanRegister.state}" requiredMessage="Please enter State" styleClass="form-control" />
+            </div>
+
+            <div class="form-group row">
+                <h:outputLabel for="City" value="City" styleClass="col-sm-2 col-form-label" />
+                <h:inputText id="City" rendered="true"  value="#{jsfBeanRegister.city}" requiredMessage="Please enter City" styleClass="form-control" />
+            </div>
+
+           
+
+
+
+            <h:commandButton value="Sign up" action="#{jsfBeanRegister.addAddress()}" styleClass="btn btn-primary" />
+        </h:form>
+    </h:body>
+</html>
