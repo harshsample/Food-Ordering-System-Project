@@ -1,2 +1,2 @@
-Sem 1 MSCICT Project
-JAVA EE
+Sem 1 MSCICT Project <br />
+ Language: JAVA EE
